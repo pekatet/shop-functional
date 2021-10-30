@@ -1,6 +1,7 @@
 import './App.css'
 import React from 'react';
 import PropTypes from 'prop-types';
+import ItemModel from './ItemModel';
 
 const item1 = {
   brand: 'Tiger of Sweden',
@@ -34,14 +35,7 @@ function ShopItemFunc ({ item }) {
 }
 
 ShopItemFunc.propTypes = {
-  item: PropTypes.shape({
-    brand: PropTypes.string,
-    title: PropTypes.string,
-    description: PropTypes.string,
-    descriptionFull: PropTypes.string,
-    price: PropTypes.number,
-    currency: PropTypes.string
-  }),
+  item: PropTypes.instanceOf(ItemModel).isRequired
 }
 
 function App () {
